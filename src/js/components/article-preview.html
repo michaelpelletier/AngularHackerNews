@@ -1,0 +1,15 @@
+<div class="article-preview">
+  <div class="article-number">{{$ctrl.articleNumber}}</div>
+  <div class="article-voting">
+    <div class="article-triangle" ng-class="{'active': isActive}" ng-click="isActive = !isActive"></div>
+  </div>
+
+  <div class="article-content">
+    <a href="{{$ctrl.article.url}}" class="article-title">{{$ctrl.article.title}}</a>
+    <a href="{{$ctrl.hostSearchLink}}">{{$ctrl.hostName}}</a>
+
+    <div>
+      {{$ctrl.article.score}} points by <a href="{{$ctrl.authorLink}}">{{$ctrl.article.by}}</a> | <time-since article="$ctrl.article"></time-since> | hide | <a ui-sref="app.article({ id: $ctrl.article.id})">{{$ctrl.article.descendants}} comments</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<article-preview
+  article="article"
+  counter="$ctrl.counter"
+  index="$index"
+  ng-repeat="article in $ctrl.list track by $index">
+</article-preview>
+
+<div class="article-preview" ng-hide="!$ctrl.loading">
+  Loading articles...
+</div>
+
+<div class="article-preview" ng-show="!$ctrl.loading && !$ctrl.list.length">
+  No articles found.
+</div>
+
+<a ng-show="!$ctrl.loading" href="#" ng-click="$ctrl.showMoreArticles()">Load more articles</a>

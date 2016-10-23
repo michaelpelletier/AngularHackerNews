@@ -1,0 +1,21 @@
+<div class="comment-preview">
+  <div class="comment-triangle" ng-class="{'active': isActive}" ng-click="isActive = !isActive"></div>
+  <div class="comment-content">
+    <a href="{{$ctrl.authorLink}}" class="username">{{$ctrl.comment.by}}</a>
+    <time-since article="$ctrl.comment"></time-since>
+    <a href="javascript:void(0)"
+       class="toggle-collapse"
+       ng-click="$ctrl.toggleCollapse()"
+       ng-bind="$ctrl.collapse">
+    </a>
+    <div class="comment-body"
+         ng-bind-html="::$ctrl.commentBody"
+         ng-hide="$ctrl.collapsed === true">
+    </div>
+  </div>
+</div>
+
+<div class="comments-page sub-comments" ng-hide="$ctrl.collapsed === true">
+  <comment ng-repeat="comment in $ctrl.sub_comments" comment="comment">
+  </comment>
+</div>
