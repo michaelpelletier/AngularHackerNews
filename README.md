@@ -1,8 +1,8 @@
 # AngularHackerNews
 
 This is a trial created over the course of about 2 days as part of a programming
-test for a job. It is a simple client for Hacker News created with Angular 1.5.8,
-that makes use of the Hacker News API provided by Firebase
+test for a job application. It is a simple client for Hacker News created with
+Angular 1.5.8, that makes use of the Hacker News API provided by Firebase
 (https://hacker-news.firebaseio.com/).
 
 Please note that this is mostly a "proof of concept" and is not intended to be
