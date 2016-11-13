@@ -1,15 +1,19 @@
 # AngularHackerNews
 
-Creation of a client for Hacker News in Angular 1.5.8. Makes use of
-the Hacker News API provided by Firebase (https://hacker-news.firebaseio.com/).
+This is a trial created over the course of about 2 days as part of a programming
+test for a job. It is a simple client for Hacker News created with Angular 1.5.8,
+that makes use of the Hacker News API provided by Firebase
+(https://hacker-news.firebaseio.com/).
 
-# Existing issues
+Please note that this is mostly a "proof of concept" and is not intended to be
+a "perfect" representation of a recreation of the site. It does not currently
+support filtering on the main page, authentication, searching, posting, or the
+viewing of user profiles. Where applicable, I have linked to the live website
+for Hacker News.
 
-Angular routing doesn't work quite right for pagination. Clicking to load
-more articles works correctly, and appending the page filtering to the URL
-works correctly (eg: `#/?page=2`), but clicking the "load more articles"
-button does not automatically change the URL. Explosions happened when I
-tried to do that.
+There is (limited) Jasmine coverage included in this, again, largely as a proof
+of concept and not intended to be a finished project. I would love to finish
+this one day, but for the time being it has served its purpose.
 
 # Instructions
 

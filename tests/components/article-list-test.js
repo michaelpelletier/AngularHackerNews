@@ -55,26 +55,4 @@ describe('Component: articleList', function () {
       expect(controller.counter).toBe(expectedCounter);
     });
   });
-
-  describe('Function: showMoreArticles', function() {
-    it('increments the page to display the next bunch of articles', function() {
-      inject(function($rootScope, $componentController) {
-        stateParams = {
-          page: '4'
-        }
-        scope = $rootScope.$new();
-        controller = $componentController('articleList', {$stateParams: stateParams, $scope: scope});
-      });
-
-      expect(controller.currentPage).toBeDefined();
-      expect(controller.currentPage).toBe(4);
-
-      controller.showMoreArticles();
-
-      expect(controller.currentPage).toBe(5);
-      // A bit hacky. Current page * number of articles per page.
-      var expectedCounter = 5 * 30;
-      expect(controller.counter).toBe(expectedCounter);
-    });
-  });
 });

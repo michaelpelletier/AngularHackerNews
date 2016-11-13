@@ -3,6 +3,8 @@ class ArticleListCtrl {
     'ngInject';
 
     this.currentPage = parseInt($stateParams.page) || 0;
+    this.nextPage = this.currentPage + 1;
+
     this._AppConstants = AppConstants;
     this._Articles = Articles;
 
@@ -16,12 +18,6 @@ class ArticleListCtrl {
     this.counter = this.currentPage * this._AppConstants.articlesPerPage;
   }
 
-  showMoreArticles() {
-    this.currentPage += 1;
-    this.getArticles();
-    this.calculateArticleCount();
-  }
-
   getArticles() {
     this.loading = true;
     this.list = [];
@@ -29,9 +25,6 @@ class ArticleListCtrl {
     this._Articles.getTopArticles(this.currentPage).then((res) => {
       this.loading = false;
       this.list = res;
-      // Why don't you just work.
-      // this.state.go('.', {page: this.currentPage});
-      // window.history.pushState({}, `page ${this.currentPage}`, `#/?page=${this.currentPage}`);
     });
   }
 }
