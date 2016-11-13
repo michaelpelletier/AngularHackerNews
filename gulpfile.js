@@ -72,14 +72,16 @@ gulp.task('jasmine', function() {
 });
 
 gulp.task('heroku', ['sass', 'html', 'browserify'], function() {
-  browserSync.init(['./build/**/**.**'], {
-    server: "./build",
-    port: 4000,
-    notify: false,
-    ui: {
-      port: 4001
-    }
-  });
+  // 
+  //
+  // browserSync.init(['./build/**/**.**'], {
+  //   server: "./build",
+  //   port: 4000,
+  //   notify: false,
+  //   ui: {
+  //     port: 4001
+  //   }
+  // });
 });
 
 gulp.task('default', ['sass', 'html', 'browserify'], function() {
