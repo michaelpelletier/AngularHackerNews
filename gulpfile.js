@@ -36,7 +36,7 @@ gulp.task('browserify', ['views'], function() {
     .transform(ngAnnotate)
     .bundle()
     .on('error', interceptErrors)
-    .pipe(source('main.js'))
+    .pipe(source('app.js'))
     .pipe(gulp.dest('./build/'));
 });
 
@@ -62,7 +62,7 @@ gulp.task('views', function() {
 
 gulp.task('jasmine', function() {
   var filesForTest = [
-    'build/main.js',
+    'build/app.js',
     'node_modules/angular-mocks/angular-mocks.js',
     'tests/**/*.js'
   ];
@@ -71,18 +71,7 @@ gulp.task('jasmine', function() {
     .pipe(jasmineBrowser.server({port: 8888}));
 });
 
-gulp.task('heroku', ['sass', 'html', 'browserify'], function() {
-  // 
-  //
-  // browserSync.init(['./build/**/**.**'], {
-  //   server: "./build",
-  //   port: 4000,
-  //   notify: false,
-  //   ui: {
-  //     port: 4001
-  //   }
-  // });
-});
+gulp.task('heroku', ['sass', 'html', 'browserify']);
 
 gulp.task('default', ['sass', 'html', 'browserify'], function() {
   browserSync.init(['./build/**/**.**'], {

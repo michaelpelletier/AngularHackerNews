@@ -30,7 +30,6 @@
     "vinyl-source-stream": "1.1.0"
   },
   "scripts": {
-    "postinstall": "gulp heroku",
-    "test": "gulp jasmine"
+    "build": "gulp heroku"
   }
 }
