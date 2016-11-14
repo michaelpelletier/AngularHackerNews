@@ -71,7 +71,7 @@ gulp.task('jasmine', function() {
     .pipe(jasmineBrowser.server({port: 8888}));
 });
 
-gulp.task('heroku', ['sass', 'html', 'browserify']);
+gulp.task('heroku:production', ['sass', 'html', 'browserify']);
 
 gulp.task('default', ['sass', 'html', 'browserify'], function() {
   browserSync.init(['./build/**/**.**'], {
