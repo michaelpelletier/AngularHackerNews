@@ -30,6 +30,6 @@
     "vinyl-source-stream": "1.1.0"
   },
   "scripts": {
-    "build": "gulp heroku:production"
+    "build": "gulp heroku:"
   }
 }
